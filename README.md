@@ -1,5 +1,5 @@
 # `rustkill`
-A highly accurate and efficient Linux tool for killing Rust programs for.
+A highly accurate and efficient Linux tool for killing Rust programs.
 
 ## Usage
 ```
