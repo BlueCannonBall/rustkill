@@ -86,7 +86,7 @@ void show_help(options_description& desc, char** argv) {
 
 int main(int argc, char** argv) {
     signal(SIGINT, [](int signum) {
-        cout << "Summary: Killed " << kills << " Rust processe(s) in total\n";
+        cout << "Summary: Killed " << kills << " Rust process(es) in total\n";
         exit(signum);
     });
 
@@ -119,7 +119,7 @@ int main(int argc, char** argv) {
             }
         } else {
             int result = kill_rust(whitelist);
-            cout << "Summary: Killed " << kills << " Rust processe(s)\n";
+            cout << "Summary: Killed " << kills << " Rust process(es)\n";
             return result;
         }
     } catch(exception& e) {
