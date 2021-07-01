@@ -37,11 +37,10 @@ int kill_rust(vector<string>& whitelist) {
     std::vector<std::string> folders;
     DIR* procdir = opendir("/proc");
     struct dirent* entry;
-    if (procdir != NULL) {
-        while ((entry = readdir(procdir))) {
-            if (is_file(entry->d_name) == 0 && is_number(entry->d_name))
-                if (getpid() != atoi(entry->d_name))
-                    folders.push_back(std::string(entry->d_name));
+    while ((entry = readdir(procdir))) {
+        if (is_file(entry->d_name) == 0 && is_number(entry->d_name)) {
+            if (getpid() != atoi(entry->d_name))
+                folders.push_back(std::string(entry->d_name));       
         }
     }
     closedir(procdir);

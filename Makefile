@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-lboost_program_options -Wall -s -Ofast -fopenmp
+CFLAGS=-lboost_program_options -pthread -Wall -s -Ofast -fopenmp
 TARGET=rustkill
 
 $(TARGET): main.cpp
